@@ -1,0 +1,143 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.header {
+  position: relative;
+  top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding: 0 30px;
+
+  @include m.tablet {
+    padding: 0;
+  }
+
+  &__logo {
+    width: 40px;
+    height: 40px;
+    @include m.tablet {
+      margin-left: 38px;
+    }
+  }
+
+  &__hamburger {
+    width: 24px;
+    height: 21px;
+    z-index: 2;
+
+    @include m.tablet {
+      display: none;
+    }
+  }
+
+  &__nav {
+    background-color: rgb(34, 34, 34);
+    display: none;
+    z-index: 3;
+    @include m.tablet {
+      display: block;
+    }
+
+    @include m.desktop {
+      background-color: transparent;
+      backdrop-filter: blur(50px);
+      width: 60%;
+      &::before {
+        content: "";
+        display: block;
+        border-top: 1px solid v.$gray;
+        position: relative;
+        right: 50%;
+        top: 2.5rem;
+        width: 55%;
+      }
+    }
+  }
+  &__ul {
+    display: flex;
+    padding: 0 40px;
+    @include m.desktop {
+      justify-content: space-around;
+    }
+  }
+  &__li {
+    color: v.$gray;
+    margin-right: 1rem;
+    padding: 30px 0;
+    @include m.desktop {
+      color: white;
+    }
+  }
+
+  &__numberLink {
+    display: none;
+    @include m.desktop {
+      display: inline;
+      font-weight: bold;
+      margin-right: 5px;
+    }
+  }
+
+  .active {
+    @extend .header__li;
+    border-bottom: 4px solid v.$white;
+  }
+}
+
+@media (max-width: 767px) {
+  .header__navResponsive {
+    background-color: transparent;
+    backdrop-filter: blur(30px);
+    display: block;
+    width: 65%;
+    min-height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 5rem;
+    animation-name: slide;
+    animation-duration: 0.3s;
+  }
+  @keyframes slide {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 65%;
+    }
+  }
+
+  .close {
+    @extend .header__navResponsive;
+    width: 0%;
+    animation-name: slideClose;
+    animation-duration: 0.3s;
+  }
+  @keyframes slideClose {
+    from {
+      width: 65%;
+    }
+    to {
+      width: 0%;
+    }
+  }
+
+  .header__numberLink {
+    display: inline;
+    font-weight: bold;
+  }
+  .header__ul {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .header__li {
+    color: #fff;
+    white-space: nowrap;
+    margin: 0;
+    padding: 1.5rem 0;
+  }
+  .active {
+    border: none !important;
+  }
+}

@@ -1,0 +1,90 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.destination {
+  @include m.desktop {
+    display: grid;
+    @include m.grid(2, 1fr);
+    justify-items: end;
+    margin-top: 5rem;
+    height: 70vh;
+    align-items: center;
+  }
+
+  &__number {
+    color: v.$gray;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  &__sub {
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1.2rem;
+    position: relative;
+    @include m.tablet {
+      text-align: start;
+      margin-left: 2.5rem;
+    }
+    @include m.desktop {
+      margin-left: 10%;
+    }
+  }
+  &__img {
+    max-width: 200px;
+    margin: 0 auto;
+    @include m.tablet {
+      max-width: 330px;
+    }
+    @include m.desktop {
+      max-width: 475px;
+    }
+  }
+
+  &__nav {
+    margin-top: 2rem;
+    @include m.desktop {
+      max-width: 475px;
+    }
+  }
+
+  &__ul {
+    display: flex;
+    justify-content: space-between;
+    @include m.tablet {
+      justify-content: space-around;
+      padding: 0 3.5rem;
+    }
+    @include m.desktop {
+      justify-content: start;
+      padding: 0;
+    }
+  }
+
+  &__button {
+    background-color: transparent;
+    color: v.$text;
+    text-transform: uppercase;
+    border: none;
+    padding-bottom: 0.6rem;
+    @include m.tablet {
+      font-size: 1.2rem;
+    }
+    @include m.desktop {
+      margin-right: 20px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__active {
+    border-bottom: 2px solid #fff;
+  }
+}
+
+.planet {
+  display: flex;
+  flex-direction: column;
+}

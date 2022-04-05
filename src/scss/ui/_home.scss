@@ -1,0 +1,88 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.home {
+  &__explore {
+    background-color: v.$white;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 78px;
+    transition: all 0.3s ease;
+    @include m.tablet {
+      width: 242px;
+      height: 242px;
+      margin-top: 150px;
+    }
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0px 0px 5px 61px rgba(97, 94, 94, 0.582);
+      -webkit-box-shadow: 0px 0px 5px 61px rgba(97, 94, 94, 0.582);
+      -moz-box-shadow: 0px 0px 5px 61px rgba(97, 94, 94, 0.582);
+    }
+    @include m.desktop {
+      margin: unset;
+      margin-top: 5rem;
+    }
+  }
+  &__exploreText {
+    font-family: v.$font_bellefair;
+    text-transform: uppercase;
+    @include m.tablet {
+      font-size: 36px;
+    }
+  }
+  &__fieldsText {
+    max-width: 28.5rem;
+  }
+}
+
+.subTitle {
+  color: v.$text;
+  font-size: 24px;
+  font-family: v.$font_barlow-condensed;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  @include m.tablet {
+    margin-bottom: 20px;
+  }
+  @include m.desktop {
+    text-align: left;
+    font-size: 40px;
+  }
+}
+.title {
+  font-family: v.$font_bellefair;
+  text-align: center;
+  text-transform: uppercase;
+  color: v.$white;
+  margin-bottom: 50px;
+  @include m.tablet {
+    margin-bottom: 20px;
+  }
+  @include m.desktop {
+    text-align: left;
+  }
+}
+.text {
+  color: v.$text;
+  font-size: 15px;
+  line-height: 2;
+  letter-spacing: 0.2px;
+  font-family: v.$font_barlow;
+  text-align: center;
+  @include m.desktop {
+    text-align: left;
+  }
+}
+@include m.desktop {
+  .home__flexDesktop {
+    display: flex;
+    justify-content: space-between;
+  }
+}

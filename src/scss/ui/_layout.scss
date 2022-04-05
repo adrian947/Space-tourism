@@ -1,0 +1,21 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.heigthLayoutHome {
+  padding-top: 70px;
+  @include m.tablet {
+    padding-top: 100px;
+  }
+  @include m.desktop {
+    padding-top: 300px;
+  }
+}
+.heigthLayoutDestination {
+  padding-top: 70px;
+  @include m.tablet {
+    padding-top: 70px;
+  }
+  @include m.desktop {
+    padding-top: 70px;
+  }
+}

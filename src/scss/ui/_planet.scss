@@ -1,0 +1,66 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.planet {
+  &__title {
+    color: #fff;
+    text-transform: uppercase;
+    font-family: v.$font_bellefair;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 56px;
+    @include m.tablet {
+      font-size: 80px;
+    }
+    @include m.desktop {
+      text-align: start;
+    }
+  }
+  &__description {
+    color: v.$text;
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 1.6;
+    @include m.desktop {
+      text-align: start;
+    }
+  }
+
+  &__distance {
+    border-top: 1px solid v.$gray;
+    margin: 2rem 0;
+    @include m.tablet {
+      display: flex;
+      justify-content: space-around;
+    }
+    @include m.desktop {
+      justify-content: start;
+      gap: 5rem;
+    }
+  }
+
+  &__distanceSub {
+    color: v.$text;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    font-family: v.$font_barlow-condensed;
+    font-size: 1.2rem;
+    text-align: center;
+    @include m.desktop {
+      text-align: start;
+    }
+  }
+
+  &__distanceP {
+    color: #fff;
+    font-family: v.$font_bellefair;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 1rem;
+    @include m.desktop {
+      font-size: 1.6rem;
+      text-align: start;
+    }
+  }
+}

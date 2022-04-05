@@ -1,0 +1,109 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+.tech {
+  @include m.desktop {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  &__image {
+    @include m.tablet {
+      height: 18rem;
+      width: 100%;
+    }
+    @include m.desktop {
+      height: 515px;
+      width: 527px;
+    }
+  }
+
+  &__numberButtons {
+    display: flex;
+    justify-content: space-around;
+    max-width: 220px;
+    margin: 0 auto;
+    margin-top: 1.5rem;
+    @include m.desktop {
+      flex-direction: column;
+      margin: 0;
+      margin-left: 10%;
+      gap: 4rem;
+      justify-content: center;
+      order: 3;
+      
+    }
+  }
+
+  &__button {
+    width: 52px;
+    height: 52px;
+    padding: 1rem;
+    border: 1px solid v.$gray;
+    border-radius: 50%;
+    background-color: #000;
+    color: #fff;
+    transition: all .3s linear;
+    @include m.desktop{ 
+      width: 62px;
+      height: 62px;
+      font-size: 1.2rem;
+     }
+     &:hover{
+      border: 1px solid #fff;
+     }
+  }
+
+  &__terminology {
+    color: v.$text;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 2rem;
+    font-family: v.$font_barlow-condensed;
+    @include m.desktop{ 
+      text-align: start;
+     }
+  }
+
+  &__name {
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 2rem;
+    @include m.desktop{ 
+      text-align: start;
+      font-size: 3rem;
+     }
+  }
+  &__description {
+    color: v.$text;
+    text-align: center;
+    max-width: 90%;
+    margin: 1rem auto;
+    font-size: 1rem;
+    line-height: 1.6;
+
+    @include m.tablet {
+      max-width: 60%;
+      font-size: 1rem;
+    }
+    @include m.desktop{ 
+      text-align: start;
+      margin: 0;
+      margin: 2rem 0;
+     }
+  }
+  &__active {
+    background-color: #fff;
+    color: #000;
+  }
+  &__info{
+    @include m.desktop{ 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 4rem;      
+     }
+  }
+}

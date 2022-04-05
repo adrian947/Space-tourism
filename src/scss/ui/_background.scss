@@ -1,0 +1,72 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.bg {
+  background-image: url("../assets/home/background-home-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+
+  @include m.tablet {
+    background-image: url("../assets/home/background-home-tablet.jpg");
+  }
+  @include m.desktop {
+    background-image: url("../assets/home/background-home-desktop.jpg");
+  }
+}
+.bgdestination {
+  background-image: url("../assets/destination/background-destination-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+
+  @include m.tablet {
+    background-image: url("../assets/destination/background-destination-tablet.jpg");
+  }
+  @include m.desktop {
+    background-image: url("../assets/destination/background-destination-desktop.jpg");
+  }
+}
+.bgcrew {
+  background-image: url("../assets/crew/background-crew-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+  overflow-y: scroll;
+  @include m.tablet {
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  @include m.tablet {
+    background-image: url("../assets/crew/background-crew-tablet.jpg");
+  }
+  @include m.desktop {
+    background-image: url("../assets/crew/background-crew-desktop.jpg");
+  }
+}
+
+.bgtechnology {
+  background-image: url("../assets/technology/background-technology-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+
+  @include m.tablet {
+    background-image: url("../assets/technology/background-technology-tablet.jpg");
+  }
+  @include m.desktop {
+    background-image: url("../assets/technology/background-technology-desktop.jpg");
+  }
+}

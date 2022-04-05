@@ -1,0 +1,130 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.slick-dots {
+  bottom: 26px !important;
+  margin: -290px 0 !important ;
+
+  @include m.tablet {
+    position: relative !important;
+    top: 130px !important;
+    margin: unset !important;
+  }
+  @include m.desktop {
+    top: -10rem !important;
+    right: 28% !important;
+  }
+}
+
+.slick-dots li.slick-active button:before {
+  color: #fff !important;
+  width: 15px !important;
+  height: 15px !important;
+}
+.slick-dots button:before {
+  color: #fff !important;
+  font-size: 12px !important;
+}
+.slick-list {
+  overflow: visible !important;
+}
+.slick-slider {
+  height: 10px;
+}
+
+.crew {
+  &__flex {
+    display: flex !important;
+    flex-direction: column;
+
+    @include m.tablet {
+      flex-direction: column-reverse;
+      position: relative;
+    }
+
+    @include m.desktop {
+      flex-direction: row-reverse;
+      max-width: 90%;
+    }
+  }
+
+  &__info {
+    position: relative;
+    top: 5rem;
+    text-align: center;
+    @include m.tablet {
+      position: relative;
+      top: 1rem;
+    }
+    @include m.desktop {
+      left: 12%;
+      top: 10rem;
+    }
+  }
+
+  &__img {
+    height: 223px;
+    width: 327px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    object-fit: contain;
+    @include m.tablet {
+      position: absolute;
+      width: 456.37px;
+      height: 572px;
+      left: 155.85px;
+      top: 270px;
+    }
+    @include m.desktop {
+      position: relative;
+      width: 456.37px;
+      height: 672px;
+      top: 120px;
+    }
+  }
+  &__role {
+    color: v.$gray;
+    font-family: v.$font_bellefair;
+    text-transform: uppercase;
+    font-size: 22px;
+    @include m.desktop {
+      text-align: start;
+    }
+  }
+  &__name {
+    font-family: v.$font_bellefair;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #fff;
+    margin-top: 1rem;
+    @include m.desktop {
+      font-size: 3rem;
+      text-align: start;
+    }
+  }
+  &__bio {
+    color: v.$text;
+    max-width: 350px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    line-height: 1.5;
+    margin-top: 1rem;
+
+    @include m.tablet {
+      max-width: 520px;
+    }
+    @include m.desktop {
+      text-align: start;
+      margin: 0;
+    }
+  }
+}
+
+.imgBorder {
+  margin: 0 auto;
+  max-width: 80%;
+  border-bottom: 1px solid v.$gray;
+}
